@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery.min.js"></script>
+</head>
+<body>
+
+    <h3>Toggle JQuery </h3>
+    
+    <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni quidem sed voluptas illo nihil? Omnis perspiciatis maxime quia veritatis exercitationem at obcaecati blanditiis consectetur rerum? Tempore quia est illum? Excepturi!</p>
+
+   
+    <button class="btn1">Hide all </button>
+    <button class="btn2">Show all</button>
+    <button class="btn3">Show/Hide</button>
+
+    <script>
+        $(document).ready(function(){
+            $(".btn1").click(function(){
+                $("p").hide();
+            });
+
+        $(".btn2").click(function(){
+                $("p").show();
+            });
+
+            $(".btn3").click(function(){
+                $("p").toggle();
+            });
+
+
+        });
+    </script>
+    
+</body>
+</html>
