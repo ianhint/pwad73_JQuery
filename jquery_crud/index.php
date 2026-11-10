@@ -10,6 +10,12 @@
 </head>
 <body>
 
+<h3>Students list</h3>
+
+   <div id="container"></div>
+
+   <h3>Students Entry</h3>
+
       <form action="">
         Name:
         <input type="text" id="fullname" placeholder="Your Name.."><br><br>
@@ -22,19 +28,27 @@
 
       <script>
         $(document).ready(function(){
-            // $("#btn1").click(function(){
-            //     $.get("data.php",{name:"Ismail"},function(data,status){
-            //         alert(data);
-            //     })
-            // })
+           function getStudents(){
+             $.get("students.php",function(data,status){
+                $("#container").html(data)
+              })
+           }
+           getStudents();
 
             $(".btn_submit").click(function(){
               let fullname =  $("#fullname").val();
               let address =  $("#address").val();
-              alert (fullname);
+              // alert (fullname);
+
               
-              $.get("insert.php",{name :fullname,add :address},function(){
+              
+              $.get("insert.php",{name :fullname,add :address},function(data,status){
                 alert(data);
+
+                 $("#fullname").val("");
+                 $("#address").val("");
+                 getStudents();
+
               })
             })
 
