@@ -31,8 +31,18 @@
            function getStudents(){
              $.get("students.php",function(data,status){
                 $("#container").html(data)
-              })
-           }
+
+                 $(".btnDel").click(function(){
+                let sid= this.id;
+                $.get ("delete.php",{
+                  id:sid
+                },function(data){
+                  alert(data);
+                })
+            })
+          })
+         }
+
            getStudents();
 
             $(".btn_submit").click(function(){
@@ -51,7 +61,6 @@
 
               })
             })
-
 
         })
       </script>
